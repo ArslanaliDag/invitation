@@ -21,27 +21,29 @@
 Для изменения размера текста можно использовать метод `truetype()` и передать нужный размер шрифта:
 
 ```python
-font = ImageFont.truetype("path_to_font/Book Antiqua.ttf", 80)
+    font = ImageFont.truetype("path_to_font/Book Antiqua.ttf", 80)
+```
 
 ## 4. Изменение цвета текста
 
 Цвет текста можно изменить, задав его в формате RGB. Например, для красного цвета:
 
 ```python
-draw.text((x, y), "Текст", font=font, fill=(255, 0, 0))
+    draw.text((x, y), "Текст", font=font, fill=(255, 0, 0))
+```
 
 ## 5. Замена шрифта на Book Antiqua
 
 Для загрузки системного шрифта Book Antiqua, нужно указать путь к файлу шрифта:
 
-```python
+python
 font = ImageFont.truetype("path_to_font/Book Antiqua.ttf", size)
 
 ## 6. Центрирование текста
 
 Чтобы отцентрировать текст по горизонтали в зависимости от длины ФИО, нужно динамически рассчитывать ширину текста и корректировать позицию его отображения. Для этого библиотека Pillow предоставляет метод textbbox() у объекта ImageDraw, который возвращает размер текста в пикселях. Пример:
 
-```python
+python
 bbox = draw.textbbox((x, y), "ФИО", font=font)
 text_width = bbox[2] - bbox[0]
 position_x = (image_width - text_width) // 2
@@ -50,7 +52,7 @@ position_x = (image_width - text_width) // 2
 
 Если появляется ошибка:
 
-```csharp
+csharp
 AttributeError: 'ImageDraw' object has no attribute 'textsize'.
 
 В новых версиях библиотеки Pillow метод textsize() был заменён на метод textbbox(). Обновите код для использования этого метода для расчёта размеров текста с большей точностью.
