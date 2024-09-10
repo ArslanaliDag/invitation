@@ -5,6 +5,7 @@ from PIL import Image, ImageDraw, ImageFont
 names_file = 'invitation_names.txt'
 image_file = 'invitation.jpg'
 output_dir = 'invitations'
+font_path = 'Book_Antiqua.ttf'  # Путь к шрифту
 
 # Размер изображения в миллиметрах и разрешение
 width_mm, height_mm = 209.97, 260.01
@@ -28,7 +29,6 @@ image = Image.open(image_file)
 image = image.resize((width_px, height_px))  # Изменяем размер в пикселях
 
 # Загружаем шрифт Book Antiqua
-font_path = 'Book_Antiqua.ttf'  # Путь к шрифту
 font_size = 80  # Размер шрифта
 font = ImageFont.truetype(font_path, font_size)
 
