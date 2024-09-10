@@ -36,23 +36,23 @@
 
 Для загрузки системного шрифта Book Antiqua, нужно указать путь к файлу шрифта:
 
-python
-font = ImageFont.truetype("path_to_font/Book Antiqua.ttf", size)
+```python
+    font = ImageFont.truetype("path_to_font/Book Antiqua.ttf", size)
+```
 
 ## 6. Центрирование текста
 
 Чтобы отцентрировать текст по горизонтали в зависимости от длины ФИО, нужно динамически рассчитывать ширину текста и корректировать позицию его отображения. Для этого библиотека Pillow предоставляет метод textbbox() у объекта ImageDraw, который возвращает размер текста в пикселях. Пример:
 
-python
-bbox = draw.textbbox((x, y), "ФИО", font=font)
-text_width = bbox[2] - bbox[0]
-position_x = (image_width - text_width) // 2
+```python
+    bbox = draw.textbbox((x, y), "ФИО", font=font)
+    text_width = bbox[2] - bbox[0]
+    position_x = (image_width - text_width) // 2
+```    
 
 ## 7. Исправление ошибки AttributeError
 
 Если появляется ошибка:
-
-csharp
-AttributeError: 'ImageDraw' object has no attribute 'textsize'.
+`AttributeError: 'ImageDraw' object has no attribute 'textsize'.`
 
 В новых версиях библиотеки Pillow метод textsize() был заменён на метод textbbox(). Обновите код для использования этого метода для расчёта размеров текста с большей точностью.
