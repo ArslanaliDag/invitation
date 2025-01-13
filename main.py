@@ -34,7 +34,8 @@ font = ImageFont.truetype(font_path, font_size)
 
 # Параметры для размещения текста на изображении
 text_y_position = 1810  # Вертикальная позиция текста
-text_color = (255, 0, 0)  # Красный цвет текста (RGB)
+# text_color = (255, 0, 0)  # Красный цвет текста (RGB)
+text_color = (0, 68, 125)  # Синий цвет текста (RGB)
 
 # Функция для центрирования текста по горизонтали
 def get_centered_position(text, font, image_width):
